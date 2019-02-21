@@ -24,10 +24,10 @@ namespace FizzBuzzEnterpriseEdition
 			IStringStringReturnerFactory stringStringReturnerFactory = (IStringStringReturnerFactory)kernel.Get<IStringStringReturnerFactory>();
 			IIntegerStringReturnerFactory integerStringReturnerFactory = (IIntegerStringReturnerFactory)kernel.Get<IIntegerStringReturnerFactory>();
 
-			for (int i = 1; i <= 100; i++)
+			for (int i = Repository.Constants.Integers.START; i <= Repository.Constants.Integers.END; i += Repository.Constants.Integers.INCREMENT)
 			{
-				bool mod3 = i % 3 == 0;
-				bool mod5 = i % 5 == 0;
+				bool mod3 = i % Repository.Constants.Integers.FIZZ_DIVISOR == 0;
+				bool mod5 = i % Repository.Constants.Integers.BUZZ_DIVISOR == 0;
 
 				if (mod3 && mod5)
 				{

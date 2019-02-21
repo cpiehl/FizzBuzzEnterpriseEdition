@@ -44,9 +44,12 @@
   <ItemGroup>
     <Compile Include="Bindings\BindingKernel.cs" />
     <Compile Include="Bindings\FizzBuzzBindings.cs" />
+    <Compile Include="Repository\Constants\Integers.cs" />
     <Compile Include="Repository\Factories\IntegerStringReturnerFactory.cs" />
+    <Compile Include="Repository\Interfaces\IEvenlyDivisibleStrategy.cs" />
     <Compile Include="Repository\Interfaces\IIntegerStringReturnerFactory.cs" />
     <Compile Include="Bindings\IKernelBindings.cs" />
+    <Compile Include="Repository\Interfaces\ILoop.cs" />
     <Compile Include="Repository\Interfaces\IPrinter.cs" />
     <Compile Include="Repository\Interfaces\IStringStringReturnerFactory.cs" />
     <Compile Include="Repository\Models\Binding.cs" />

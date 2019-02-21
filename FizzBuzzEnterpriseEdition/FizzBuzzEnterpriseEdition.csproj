@@ -42,11 +42,37 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bindings\BindingKernel.cs" />
+    <Compile Include="Bindings\FizzBuzzBindings.cs" />
+    <Compile Include="Repository\Factories\IntegerStringReturnerFactory.cs" />
+    <Compile Include="Repository\Interfaces\IIntegerStringReturnerFactory.cs" />
+    <Compile Include="Bindings\IKernelBindings.cs" />
+    <Compile Include="Repository\Interfaces\IPrinter.cs" />
+    <Compile Include="Repository\Interfaces\IStringStringReturnerFactory.cs" />
+    <Compile Include="Repository\Models\Binding.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\Constants\Strings.cs" />
+    <Compile Include="Repository\Factories\StringStringReturnerFactory.cs" />
+    <Compile Include="Repository\Models\ConsolePrinter.cs" />
+    <Compile Include="Repository\Models\BuzzStringReturner.cs" />
+    <Compile Include="Repository\Models\FizzStringReturner.cs" />
+    <Compile Include="Repository\Interfaces\IIntegerStringReturner.cs" />
+    <Compile Include="Repository\Interfaces\IStringStringReturner.cs" />
+    <Compile Include="Repository\Models\IntegerStringReturner.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

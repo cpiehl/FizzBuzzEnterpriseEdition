@@ -48,7 +48,8 @@ namespace FizzBuzzEnterpriseEdition
 				}
 				else
 				{
-					Console.WriteLine(i);
+					IIntegerStringReturner integerStringReturner = integerStringReturnerFactory.Create();
+					printer.PrintLine(integerStringReturner.GetString(i));
 				}
 			}
 		}

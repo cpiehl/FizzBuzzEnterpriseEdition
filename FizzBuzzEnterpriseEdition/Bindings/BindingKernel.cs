@@ -7,6 +7,7 @@ namespace FizzBuzzEnterpriseEdition.Bindings
 {
 	public class BindingKernel
 	{
+		// Todo: make this a hashset, catch duplicate key exception and rethrow our own "already bound" exception
 		private List<Binding> bindings = new List<Binding>();
 
 		public BindingKernel() { }

@@ -5,13 +5,11 @@ namespace FizzBuzzEnterpriseEdition
 {
 	public class Program
 	{
-		public static BindingKernel Kernel;
-
 		static void Main(string[] args)
 		{
-			Program.Kernel = new BindingKernel(new FizzBuzzBindings());
+			BindingKernel kernel = new BindingKernel(new FizzBuzzBindings());
 
-			IFizzBuzzSolutionStrategy solution = (IFizzBuzzSolutionStrategy)Program.Kernel.Get<IFizzBuzzSolutionStrategy>();
+			IFizzBuzzSolutionStrategy solution = (IFizzBuzzSolutionStrategy)kernel.Get<IFizzBuzzSolutionStrategy>();
 			solution.Run();
 		}
 	}

@@ -16,6 +16,8 @@ namespace FizzBuzzEnterpriseEdition.Bindings
 
 			kernel.Bind<IPrinter>().To<ConsolePrinter>();
 
+			kernel.Bind<ILoop>().To<Loop>();
+
 			kernel.Bind<IStringStringReturner>().To<FizzStringReturner>();
 			kernel.Bind<IIntegerStringReturner>().To<IntegerStringReturner>();
 

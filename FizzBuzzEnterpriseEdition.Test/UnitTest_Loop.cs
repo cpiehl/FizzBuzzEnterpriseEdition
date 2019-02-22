@@ -13,7 +13,7 @@ namespace FizzBuzzEnterpriseEdition.Test
 		public void Test_Loop()
 		{
 			BindingKernel kernel = new BindingKernel(new TestFizzBuzzBindings());
-			IFizzBuzzSolutionStrategy solution = (IFizzBuzzSolutionStrategy)Program.Kernel.Get<IFizzBuzzSolutionStrategy>();
+			IFizzBuzzSolutionStrategy solution = (IFizzBuzzSolutionStrategy)kernel.Get<IFizzBuzzSolutionStrategy>();
 			solution.Run();
 		}
 	}

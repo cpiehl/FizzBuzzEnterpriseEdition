@@ -1,12 +1,12 @@
-﻿using FizzBuzzEnterpriseEdition.Repository.Interfaces;
-using FizzBuzzEnterpriseEdition.Repository.Models;
+﻿using FizzBuzzEnterpriseEdition.Interfaces;
+using FizzBuzzEnterpriseEdition.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FizzBuzzEnterpriseEdition.Repository.Factories
+namespace FizzBuzzEnterpriseEdition.Factories
 {
 	public class StringStringReturnerFactory : IStringStringReturnerFactory
 	{

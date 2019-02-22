@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FizzBuzzEnterpriseEdition.Bindings;
-using FizzBuzzEnterpriseEdition.Repository.Interfaces;
+using FizzBuzzEnterpriseEdition.Interfaces;
 
 namespace FizzBuzzEnterpriseEdition
 {
@@ -24,26 +24,26 @@ namespace FizzBuzzEnterpriseEdition
 			IStringStringReturnerFactory stringStringReturnerFactory = (IStringStringReturnerFactory)kernel.Get<IStringStringReturnerFactory>();
 			IIntegerStringReturnerFactory integerStringReturnerFactory = (IIntegerStringReturnerFactory)kernel.Get<IIntegerStringReturnerFactory>();
 
-			for (int i = Repository.Constants.Integers.START; i <= Repository.Constants.Integers.END; i += Repository.Constants.Integers.INCREMENT)
+			for (int i = Constants.Integers.START; i <= Constants.Integers.END; i += Constants.Integers.INCREMENT)
 			{
-				bool mod3 = i % Repository.Constants.Integers.FIZZ_DIVISOR == 0;
-				bool mod5 = i % Repository.Constants.Integers.BUZZ_DIVISOR == 0;
+				bool mod3 = i % Constants.Integers.FIZZ_DIVISOR == 0;
+				bool mod5 = i % Constants.Integers.BUZZ_DIVISOR == 0;
 
 				if (mod3 && mod5)
 				{
-					IStringStringReturner fizzStringReturner = stringStringReturnerFactory.Create(Repository.Constants.Strings.FIZZ);
-					IStringStringReturner buzzStringReturner = stringStringReturnerFactory.Create(Repository.Constants.Strings.BUZZ);
+					IStringStringReturner fizzStringReturner = stringStringReturnerFactory.Create(Constants.Strings.FIZZ);
+					IStringStringReturner buzzStringReturner = stringStringReturnerFactory.Create(Constants.Strings.BUZZ);
 					printer.Print(fizzStringReturner.GetString());
 					printer.PrintLine(buzzStringReturner.GetString());
 				}
 				else if (mod3)
 				{
-					IStringStringReturner fizzStringReturner = stringStringReturnerFactory.Create(Repository.Constants.Strings.FIZZ);
+					IStringStringReturner fizzStringReturner = stringStringReturnerFactory.Create(Constants.Strings.FIZZ);
 					printer.PrintLine(fizzStringReturner.GetString());
 				}
 				else if (mod5)
 				{
-					IStringStringReturner buzzStringReturner = stringStringReturnerFactory.Create(Repository.Constants.Strings.BUZZ);
+					IStringStringReturner buzzStringReturner = stringStringReturnerFactory.Create(Constants.Strings.BUZZ);
 					printer.PrintLine(buzzStringReturner.GetString());
 				}
 				else

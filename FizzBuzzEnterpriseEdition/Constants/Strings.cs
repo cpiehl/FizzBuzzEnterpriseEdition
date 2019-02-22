@@ -1,5 +1,5 @@
 ﻿
-namespace FizzBuzzEnterpriseEdition.Repository.Constants
+namespace FizzBuzzEnterpriseEdition.Constants
 {
 	class Strings
 	{

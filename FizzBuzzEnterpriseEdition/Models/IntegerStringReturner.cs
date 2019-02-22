@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FizzBuzzEnterpriseEdition.Repository.Models
+namespace FizzBuzzEnterpriseEdition.Models
 {
 	public class IntegerStringReturner : Interfaces.IIntegerStringReturner
 	{

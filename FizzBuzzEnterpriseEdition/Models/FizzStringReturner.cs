@@ -1,6 +1,6 @@
-﻿using FizzBuzzEnterpriseEdition.Repository.Interfaces;
+﻿using FizzBuzzEnterpriseEdition.Interfaces;
 
-namespace FizzBuzzEnterpriseEdition.Repository.Models
+namespace FizzBuzzEnterpriseEdition.Models
 {
 	public class FizzStringReturner : IStringStringReturner
 	{

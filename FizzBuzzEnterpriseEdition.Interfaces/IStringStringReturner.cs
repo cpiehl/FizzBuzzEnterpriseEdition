@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FizzBuzzEnterpriseEdition.Repository.Interfaces
+namespace FizzBuzzEnterpriseEdition.Interfaces
 {
-	interface ILoop
+	public interface IStringStringReturner
 	{
+		string GetString();
 	}
 }

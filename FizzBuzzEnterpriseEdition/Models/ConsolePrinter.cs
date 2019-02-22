@@ -1,7 +1,7 @@
-﻿using FizzBuzzEnterpriseEdition.Repository.Interfaces;
+﻿using FizzBuzzEnterpriseEdition.Interfaces;
 using System;
 
-namespace FizzBuzzEnterpriseEdition.Repository.Models
+namespace FizzBuzzEnterpriseEdition.Models
 {
 	public class ConsolePrinter : IPrinter
 	{

@@ -1,8 +1,8 @@
 ﻿using FizzBuzzEnterpriseEdition.Bindings;
-using FizzBuzzEnterpriseEdition.Repository.Factories;
-using FizzBuzzEnterpriseEdition.Repository.Interfaces;
-using FizzBuzzEnterpriseEdition.Repository.Models;
-using FizzBuzzEnterpriseEdition.Test.Repository.Models;
+using FizzBuzzEnterpriseEdition.Factories;
+using FizzBuzzEnterpriseEdition.Interfaces;
+using FizzBuzzEnterpriseEdition.Models;
+using FizzBuzzEnterpriseEdition.Test.Models;
 
 namespace FizzBuzzEnterpriseEdition.Test.Bindings
 {

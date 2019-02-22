@@ -1,6 +1,6 @@
-﻿using FizzBuzzEnterpriseEdition.Repository.Factories;
-using FizzBuzzEnterpriseEdition.Repository.Interfaces;
-using FizzBuzzEnterpriseEdition.Repository.Models;
+﻿using FizzBuzzEnterpriseEdition.Factories;
+using FizzBuzzEnterpriseEdition.Interfaces;
+using FizzBuzzEnterpriseEdition.Models;
 
 namespace FizzBuzzEnterpriseEdition.Bindings
 {

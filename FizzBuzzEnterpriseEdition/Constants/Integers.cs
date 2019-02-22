@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FizzBuzzEnterpriseEdition.Repository.Constants
+namespace FizzBuzzEnterpriseEdition.Constants
 {
 	class Integers
 	{

@@ -1,7 +1,7 @@
-﻿using FizzBuzzEnterpriseEdition.Repository.Interfaces;
+﻿using FizzBuzzEnterpriseEdition.Interfaces;
 using System;
 
-namespace FizzBuzzEnterpriseEdition.Test.Repository.Models
+namespace FizzBuzzEnterpriseEdition.Test.Models
 {
 	public class MemoryPrinter : IPrinter
 	{

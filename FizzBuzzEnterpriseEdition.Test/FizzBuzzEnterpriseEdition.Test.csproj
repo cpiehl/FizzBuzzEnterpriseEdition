@@ -49,7 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bindings\TestFizzBuzzBindings.cs" />
-    <Compile Include="Repository\Models\MemoryPrinter.cs" />
+    <Compile Include="Models\MemoryPrinter.cs" />
     <Compile Include="UnitTest_Loop.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -57,6 +57,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\FizzBuzzEnterpriseEdition.Interfaces\FizzBuzzEnterpriseEdition.Interfaces.csproj">
+      <Project>{7c2855cf-1ea8-4e47-a672-634a77984224}</Project>
+      <Name>FizzBuzzEnterpriseEdition.Interfaces</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FizzBuzzEnterpriseEdition\FizzBuzzEnterpriseEdition.csproj">
       <Project>{786ef805-5860-436b-9b8b-b8c69a68283a}</Project>
       <Name>FizzBuzzEnterpriseEdition</Name>

@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using FizzBuzzEnterpriseEdition.Bindings;
 using FizzBuzzEnterpriseEdition.Interfaces;
+using FizzBuzzEnterpriseEdition.Interfaces.Factories;
+using FizzBuzzEnterpriseEdition.Interfaces.StringReturners;
 
 namespace FizzBuzzEnterpriseEdition
 {

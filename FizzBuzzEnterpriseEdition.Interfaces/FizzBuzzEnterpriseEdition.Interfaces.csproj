@@ -40,13 +40,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IEvenlyDivisibleStrategy.cs" />
-    <Compile Include="IIntegerStringReturner.cs" />
-    <Compile Include="IIntegerStringReturnerFactory.cs" />
+    <Compile Include="Strategies\IEvenlyDivisibleStrategy.cs" />
+    <Compile Include="StringReturners\IIntegerStringReturner.cs" />
+    <Compile Include="Factories\IIntegerStringReturnerFactory.cs" />
     <Compile Include="ILoop.cs" />
     <Compile Include="IPrinter.cs" />
-    <Compile Include="IStringStringReturner.cs" />
-    <Compile Include="IStringStringReturnerFactory.cs" />
+    <Compile Include="StringReturners\IStringStringReturner.cs" />
+    <Compile Include="Factories\IStringStringReturnerFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -2,7 +2,7 @@
 
 namespace FizzBuzzEnterpriseEdition.Models
 {
-	public class FizzStringReturner : IStringStringReturner
+	public class FizzStringReturner : Interfaces.StringReturners.IStringStringReturner
 	{
 		public FizzStringReturner() { }
 

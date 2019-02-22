@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace FizzBuzzEnterpriseEdition.Models
 {
-	public class IntegerStringReturner : Interfaces.IIntegerStringReturner
+	public class IntegerStringReturner : Interfaces.StringReturners.IIntegerStringReturner
 	{
 		public string GetString(int value)
 		{

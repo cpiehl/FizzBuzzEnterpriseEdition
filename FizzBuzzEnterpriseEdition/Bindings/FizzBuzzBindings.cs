@@ -1,5 +1,7 @@
 ﻿using FizzBuzzEnterpriseEdition.Factories;
 using FizzBuzzEnterpriseEdition.Interfaces;
+using FizzBuzzEnterpriseEdition.Interfaces.Factories;
+using FizzBuzzEnterpriseEdition.Interfaces.StringReturners;
 using FizzBuzzEnterpriseEdition.Models;
 
 namespace FizzBuzzEnterpriseEdition.Bindings

@@ -1,8 +1,7 @@
-﻿using FizzBuzzEnterpriseEdition.Interfaces;
-
+﻿
 namespace FizzBuzzEnterpriseEdition.Models
 {
-	public class BuzzStringReturner : IStringStringReturner
+	public class BuzzStringReturner : Interfaces.StringReturners.IStringStringReturner
 	{
 		public BuzzStringReturner() { }
 

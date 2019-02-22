@@ -1,8 +1,10 @@
 ﻿using FizzBuzzEnterpriseEdition.Factories;
 using FizzBuzzEnterpriseEdition.Interfaces;
 using FizzBuzzEnterpriseEdition.Interfaces.Factories;
+using FizzBuzzEnterpriseEdition.Interfaces.Strategies;
 using FizzBuzzEnterpriseEdition.Interfaces.StringReturners;
 using FizzBuzzEnterpriseEdition.Models;
+using FizzBuzzEnterpriseEdition.Strategies;
 
 namespace FizzBuzzEnterpriseEdition.Bindings
 {
@@ -10,6 +12,8 @@ namespace FizzBuzzEnterpriseEdition.Bindings
 	{
 		public void Init(BindingKernel kernel)
 		{
+			kernel.Bind<IFizzBuzzSolutionStrategy>().To<FizzBuzzSolutionStrategy>();
+
 			kernel.Bind<IPrinter>().To<ConsolePrinter>();
 
 			kernel.Bind<IStringStringReturner>().To<FizzStringReturner>();

@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Strategies\IEvenlyDivisibleStrategy.cs" />
+    <Compile Include="Strategies\IFizzBuzzSolutionStrategy.cs" />
     <Compile Include="StringReturners\IIntegerStringReturner.cs" />
     <Compile Include="Factories\IIntegerStringReturnerFactory.cs" />
     <Compile Include="ILoop.cs" />

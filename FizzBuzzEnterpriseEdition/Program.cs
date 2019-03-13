@@ -8,7 +8,7 @@ namespace FizzBuzzEnterpriseEdition
 	{
 		static void Main(string[] args)
 		{
-			BindingKernel kernel = new BindingKernel(Assembly.GetExecutingAssembly());
+			BindingKernel kernel = new BindingKernel();
 
 			IFizzBuzzSolutionStrategy solution = (IFizzBuzzSolutionStrategy)kernel.Get<IFizzBuzzSolutionStrategy>();
 			solution.Run();

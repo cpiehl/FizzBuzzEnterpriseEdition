@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 using FizzBuzzEnterpriseEdition.Bindings;
 using FizzBuzzEnterpriseEdition.Interfaces.Strategies;
 using FizzBuzzEnterpriseEdition.Test.Bindings;
@@ -12,7 +13,7 @@ namespace FizzBuzzEnterpriseEdition.Test
 		[TestMethod]
 		public void Test_Loop()
 		{
-			BindingKernel kernel = new BindingKernel(new TestFizzBuzzBindings());
+			BindingKernel kernel = new BindingKernel(Assembly.GetExecutingAssembly());
 			IFizzBuzzSolutionStrategy solution = (IFizzBuzzSolutionStrategy)kernel.Get<IFizzBuzzSolutionStrategy>();
 			solution.Run();
 		}

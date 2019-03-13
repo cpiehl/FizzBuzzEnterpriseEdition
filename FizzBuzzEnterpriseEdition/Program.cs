@@ -1,5 +1,6 @@
 ﻿using FizzBuzzEnterpriseEdition.Bindings;
 using FizzBuzzEnterpriseEdition.Interfaces.Strategies;
+using System.Reflection;
 
 namespace FizzBuzzEnterpriseEdition
 {
@@ -7,7 +8,7 @@ namespace FizzBuzzEnterpriseEdition
 	{
 		static void Main(string[] args)
 		{
-			BindingKernel kernel = new BindingKernel(new FizzBuzzBindings());
+			BindingKernel kernel = new BindingKernel(Assembly.GetExecutingAssembly());
 
 			IFizzBuzzSolutionStrategy solution = (IFizzBuzzSolutionStrategy)kernel.Get<IFizzBuzzSolutionStrategy>();
 			solution.Run();

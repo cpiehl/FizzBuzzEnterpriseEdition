@@ -12,9 +12,22 @@ namespace FizzBuzzEnterpriseEdition.Bindings
 
 		public BindingKernel() { }
 
-		public BindingKernel(IKernelBindings bindings)
+
+		public BindingKernel(IKernelBindings binding) : this(new List<IKernelBindings> { binding }) { }
+
+		public BindingKernel(IEnumerable<IKernelBindings> bindings)
 		{
-			bindings.Init(this);
+			BindList(bindings.Select(b => b.GetType()));
+		}
+
+		public BindingKernel(Assembly assembly)
+		{
+			BindList(FindDerivedTypes(assembly, typeof(IKernelBindings)));
+		}
+
+		private void BindList(IEnumerable<Type> bindings)
+		{
+			bindings.ToList().ForEach(t => ((IKernelBindings)this.Get(t)).Init(this));
 		}
 
 		public Binding Bind<T>()
@@ -71,6 +84,11 @@ namespace FizzBuzzEnterpriseEdition.Bindings
 		private Binding GetBindingByInterface(Type i)
 		{
 			return bindings.FirstOrDefault(b => b.InterfaceType.FullName == i.FullName);
+		}
+
+		private static IEnumerable<Type> FindDerivedTypes(Assembly assembly, Type baseType)
+		{
+			return assembly.GetTypes().Where(t => t != baseType && baseType.IsAssignableFrom(t));
 		}
 
 		//private bool CanInstanciate(Type t)

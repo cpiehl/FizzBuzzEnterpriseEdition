@@ -41,9 +41,10 @@ namespace FizzBuzzEnterpriseEdition
 			this.InterfaceType = interfaceType;
 		}
 
-		public void To<T>()
+		public Binding To<T>()
 		{
 			this.ImplementationType = typeof(T);
+			return this;
 		}
 	}
 

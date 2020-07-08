@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Exceptions\AlreadyBoundException.cs" />
     <Compile Include="Bindings\BindingKernel.cs" />
     <Compile Include="Bindings\FizzBuzzBindings.cs" />
     <Compile Include="Constants\Integers.cs" />

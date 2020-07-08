@@ -6,6 +6,9 @@ namespace FizzBuzzEnterpriseEdition
 	{
 		private Type interfaceType, implementationType;
 
+		/// <summary>
+		/// This binding's interface type.
+		/// </summary>
 		public Type InterfaceType
 		{
 			get
@@ -21,6 +24,9 @@ namespace FizzBuzzEnterpriseEdition
 			}
 		}
 
+		/// <summary>
+		/// This binding's implementation type.
+		/// </summary>
 		public Type ImplementationType
 		{
 			get
@@ -41,6 +47,11 @@ namespace FizzBuzzEnterpriseEdition
 			this.InterfaceType = interfaceType;
 		}
 
+		/// <summary>
+		/// Finish binding to implementation type T.
+		/// </summary>
+		/// <typeparam name="T">Implementation Type.</typeparam>
+		/// <returns>Bound Binding object.</returns>
 		public Binding To<T>()
 		{
 			this.ImplementationType = typeof(T);

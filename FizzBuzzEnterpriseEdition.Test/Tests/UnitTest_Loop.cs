@@ -4,7 +4,7 @@ using FizzBuzzEnterpriseEdition.Interfaces;
 using FizzBuzzEnterpriseEdition.Test.Bindings;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace FizzBuzzEnterpriseEdition.Test
+namespace FizzBuzzEnterpriseEdition.Test.Tests
 {
 	[TestClass]
 	public class UnitTest_Loop

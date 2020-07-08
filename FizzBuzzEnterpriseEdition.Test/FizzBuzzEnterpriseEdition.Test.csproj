@@ -51,7 +51,8 @@
     <Compile Include="Bindings\TestFizzBuzzBindings.cs" />
     <Compile Include="Models\MemoryPrinter.cs" />
     <Compile Include="Strategies\TestFizzBuzzSolutionStrategy.cs" />
-    <Compile Include="UnitTest_Loop.cs" />
+    <Compile Include="Tests\UnitTest_StringReturners.cs" />
+    <Compile Include="Tests\UnitTest_Loop.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

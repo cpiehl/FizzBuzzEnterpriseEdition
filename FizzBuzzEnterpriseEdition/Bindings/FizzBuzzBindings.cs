@@ -1,9 +1,10 @@
 ﻿using FizzBuzzEnterpriseEdition.Factories;
 using FizzBuzzEnterpriseEdition.Interfaces;
 using FizzBuzzEnterpriseEdition.Interfaces.Factories;
+using FizzBuzzEnterpriseEdition.Interfaces.Providers;
 using FizzBuzzEnterpriseEdition.Interfaces.Strategies;
-using FizzBuzzEnterpriseEdition.Interfaces.StringReturners;
 using FizzBuzzEnterpriseEdition.Models;
+using FizzBuzzEnterpriseEdition.Providers;
 using FizzBuzzEnterpriseEdition.Strategies;
 
 namespace FizzBuzzEnterpriseEdition.Bindings
@@ -17,10 +18,8 @@ namespace FizzBuzzEnterpriseEdition.Bindings
 			kernel.Bind<IPrinter>().To<ConsolePrinter>();
 
 			kernel.Bind<ILoop>().To<Loop>();
-
-			kernel.Bind<IStringStringReturner>().To<FizzStringReturner>();
-			kernel.Bind<IIntegerStringReturner>().To<IntegerStringReturner>();
-
+			kernel.Bind<ILoopControlProvider<int>>().To<IntegerLoopControlProvider>();
+			
 			kernel.Bind<IStringStringReturnerFactory>().To<StringStringReturnerFactory>();
 			kernel.Bind<IIntegerStringReturnerFactory>().To<IntegerStringReturnerFactory>();
 

@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Providers\ILoopControlProvider.cs" />
     <Compile Include="Strategies\IEvenlyDivisibleStrategy.cs" />
     <Compile Include="Strategies\IFizzBuzzSolutionStrategy.cs" />
     <Compile Include="StringReturners\IIntegerStringReturner.cs" />

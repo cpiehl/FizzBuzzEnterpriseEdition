@@ -1,6 +1,7 @@
 ﻿
 using FizzBuzzEnterpriseEdition.Interfaces;
 using FizzBuzzEnterpriseEdition.Interfaces.Factories;
+using FizzBuzzEnterpriseEdition.Interfaces.Providers;
 using FizzBuzzEnterpriseEdition.Interfaces.Strategies;
 using FizzBuzzEnterpriseEdition.Interfaces.StringReturners;
 
@@ -10,18 +11,21 @@ namespace FizzBuzzEnterpriseEdition.Models
 	{
 		public int Index { get; private set; }
 
+		private ILoopControlProvider<int> loopControlProvider;
 		private IPrinter printer;
 		private IStringStringReturnerFactory stringStringReturnerFactory;
 		private IIntegerStringReturnerFactory integerStringReturnerFactory;
 		private IEvenlyDivisibleStrategy<int> evenlyDivisibleStrategy;
 
 		public Loop(
+			ILoopControlProvider<int> loopControlProvider,
 			IPrinter printer,
 			IStringStringReturnerFactory stringStringReturnerFactory,
 			IIntegerStringReturnerFactory integerStringReturnerFactory,
 			IEvenlyDivisibleStrategy<int> evenlyDivisibleStrategy
 			)
 		{
+			this.loopControlProvider = loopControlProvider;
 			this.printer = printer;
 			this.stringStringReturnerFactory = stringStringReturnerFactory;
 			this.integerStringReturnerFactory = integerStringReturnerFactory;
@@ -32,7 +36,7 @@ namespace FizzBuzzEnterpriseEdition.Models
 
 		public void Run()
 		{
-			while (this.Index <= Constants.Integers.END)
+			while (this.Index <= loopControlProvider.GetEnd())
 			{
 				Step();
 			}
@@ -66,12 +70,12 @@ namespace FizzBuzzEnterpriseEdition.Models
 				printer.PrintLine(integerStringReturner.GetString(this.Index));
 			}
 
-			this.Index += Constants.Integers.INCREMENT;
+			this.Index += loopControlProvider.GetStep();
 		}
 
 		public void Reset()
 		{
-			this.Index = Constants.Integers.START;
+			this.Index = loopControlProvider.GetStart();
 		}
 	}
 }

@@ -72,9 +72,9 @@ namespace FizzBuzzEnterpriseEdition.Bindings
 		/// </summary>
 		/// <typeparam name="T">Type to create.</typeparam>
 		/// <returns>New instance of type T.</returns>
-		public object Get<T>()
+		public object Get<T>(Dictionary<string, object> constructorParams = null)
 		{
-			return Get(typeof(T));
+			return Get(typeof(T), constructorParams);
 		}
 
 		/// <summary>
@@ -82,11 +82,20 @@ namespace FizzBuzzEnterpriseEdition.Bindings
 		/// </summary>
 		/// <param name="t">Type to create.</param>
 		/// <returns>New instance of type t.</returns>
-		private object Get(Type t)
+		private object Get(Type t, Dictionary<string, object> constructorParams = null)
 		{
+			if (constructorParams is null)
+			{
+				constructorParams = new Dictionary<string, object>();
+			}
+			else
+			{
+
+			}
+
 			if (t.IsInterface)
 			{
-				return this.Get(GetBindingByInterface(t).ImplementationType);
+				return this.Get(GetBindingByInterface(t).ImplementationType, constructorParams);
 			}
 			else if (t.IsClass)
 			{
@@ -102,9 +111,21 @@ namespace FizzBuzzEnterpriseEdition.Bindings
 						continue;
 					}
 
-					if (parameters.All(p => GetBindingByInterface(p.ParameterType) != null))
+					if (parameters.All(p => false
+						|| p.ParameterType.IsClass
+						|| p.ParameterType.IsPrimitive
+						|| GetBindingByInterface(p.ParameterType) != null
+					))
 					{
-						return ci.Invoke(parameters.Select(p => this.Get(p.ParameterType)).ToArray());
+						return ci.Invoke(parameters.Select(p =>
+						{
+							if (constructorParams.Any())
+							if (constructorParams.ContainsKey(p.Name))
+							{
+								return constructorParams[p.Name];
+							}
+							return this.Get(p.ParameterType, constructorParams);
+						}).ToArray());
 					}
 				}
 				try
@@ -116,8 +137,14 @@ namespace FizzBuzzEnterpriseEdition.Bindings
 					throw; // Todo: don't know what to do with this yet
 				}
 			}
+			else if (t.IsPrimitive)
+			{
+				return Activator.CreateInstance(t);
+			}
 			else
+			{
 				throw new ArgumentException("Argument must not be an abstract class type");
+			}
 		}
 
 		/// <summary>

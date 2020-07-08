@@ -62,6 +62,7 @@
     <Compile Include="Models\BuzzStringReturner.cs" />
     <Compile Include="Models\FizzStringReturner.cs" />
     <Compile Include="Models\IntegerStringReturner.cs" />
+    <Compile Include="Strategies\IntegerEvenlyDivisibleStrategy.cs" />
     <Compile Include="Strategies\FizzBuzzSolutionStrategy.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace FizzBuzzEnterpriseEdition.Interfaces.Strategies
 {
-	interface IEvenlyDivisibleStrategy
+	public interface IEvenlyDivisibleStrategy<T>
 	{
+		bool Test(T a, T b);
 	}
 }

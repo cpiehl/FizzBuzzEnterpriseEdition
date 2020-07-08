@@ -23,6 +23,8 @@ namespace FizzBuzzEnterpriseEdition.Bindings
 
 			kernel.Bind<IStringStringReturnerFactory>().To<StringStringReturnerFactory>();
 			kernel.Bind<IIntegerStringReturnerFactory>().To<IntegerStringReturnerFactory>();
+
+			kernel.Bind<IEvenlyDivisibleStrategy<int>>().To<IntegerEvenlyDivisibleStrategy>();
 		}
 	}
 }

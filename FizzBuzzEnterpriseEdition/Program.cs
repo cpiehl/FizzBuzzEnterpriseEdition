@@ -1,6 +1,5 @@
 ﻿using FizzBuzzEnterpriseEdition.Bindings;
 using FizzBuzzEnterpriseEdition.Interfaces.Strategies;
-using System.Reflection;
 
 namespace FizzBuzzEnterpriseEdition
 {

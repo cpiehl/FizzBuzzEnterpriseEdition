@@ -32,7 +32,7 @@ namespace FizzBuzzEnterpriseEdition.Models
 
 		public void Run()
 		{
-			for (; this.Index <= Constants.Integers.END; this.Index += Constants.Integers.INCREMENT)
+			while (this.Index <= Constants.Integers.END)
 			{
 				Step();
 			}
@@ -65,6 +65,8 @@ namespace FizzBuzzEnterpriseEdition.Models
 				IIntegerStringReturner integerStringReturner = integerStringReturnerFactory.Create();
 				printer.PrintLine(integerStringReturner.GetString(this.Index));
 			}
+
+			this.Index += Constants.Integers.INCREMENT;
 		}
 
 		public void Reset()

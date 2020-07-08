@@ -1,5 +1,4 @@
-﻿using System;
-using FizzBuzzEnterpriseEdition.Bindings;
+﻿using FizzBuzzEnterpriseEdition.Bindings;
 using FizzBuzzEnterpriseEdition.Interfaces.Factories;
 using FizzBuzzEnterpriseEdition.Interfaces.StringReturners;
 using FizzBuzzEnterpriseEdition.Test.Bindings;
@@ -10,6 +9,20 @@ namespace FizzBuzzEnterpriseEdition.Test.Tests
 	[TestClass]
 	public class UnitTest_StringReturners
 	{
+		[TestMethod]
+		public void Test_IntegerStringReturner()
+		{
+			BindingKernel kernel = new BindingKernel(new TestFizzBuzzBindings());
+
+			IIntegerStringReturnerFactory stringStringReturnerFactory = (IIntegerStringReturnerFactory)kernel.Get<IIntegerStringReturnerFactory>();
+			IIntegerStringReturner integerStringReturner = stringStringReturnerFactory.Create();
+
+			for (int i = Constants.Integers.START; i <= Constants.Integers.END; i += Constants.Integers.STEP)
+			{
+				Assert.AreEqual(integerStringReturner.GetString(i), i.ToString());
+			}
+		}
+
 		[TestMethod]
 		public void Test_FizzStringReturner()
 		{
